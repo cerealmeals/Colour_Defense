@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3608902029565805257}
   - component: {fileID: 8218422955545222393}
   - component: {fileID: 1591502452387995021}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 8451721569584787324}
   - component: {fileID: 8730217390515939774}
   - component: {fileID: 7212399991211238437}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Turret Card
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -322,7 +322,7 @@ GameObject:
   - component: {fileID: 8806949061763763948}
   - component: {fileID: 3068389375653959442}
   - component: {fileID: 7991048324541063106}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}

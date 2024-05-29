@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 3918411812711638996}
   - component: {fileID: 9048464439481917186}
   - component: {fileID: 7167411732623380369}
-  m_Layer: 0
-  m_Name: blue tower
-  m_TagString: Untagged
+  - component: {fileID: 1345260191186756024}
+  m_Layer: 7
+  m_Name: Tower
+  m_TagString: tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -138,9 +139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tick: 0.5
   current: 0
-  red: 0
-  green: 0
-  blue: -0.1
+  colours: {x: 0, y: 0, z: 0}
   enemiesInRange: []
 --- !u!114 &9048464439481917186
 MonoBehaviour:
@@ -156,6 +155,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rangeIndicator: {fileID: 4014369412719646483}
   fakeTower: {fileID: 6960942143685404968, guid: d010a03d92ba84f4ba631f8f32a336e2, type: 3}
+  red: 0
+  green: 0
+  blue: 0
 --- !u!50 &7167411732623380369
 Rigidbody2D:
   serializedVersion: 4
@@ -183,6 +185,41 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!58 &1345260191186756024
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3430643929316211953}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &4014369412719646483
 GameObject:
   m_ObjectHideFlags: 0
@@ -193,7 +230,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6048742277479353534}
   - component: {fileID: 6601022777942671057}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}

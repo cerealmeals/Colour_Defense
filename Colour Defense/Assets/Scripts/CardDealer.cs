@@ -44,7 +44,6 @@ public class CardDealer : MonoBehaviour
         {
             case 1:
                 return new UnityEngine.Color(1,0,0);
-            
             case 2:
                 return new UnityEngine.Color(0,1,0);
             case 3:

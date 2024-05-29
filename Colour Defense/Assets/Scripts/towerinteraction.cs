@@ -60,19 +60,4 @@ public class towerinteraction : MonoBehaviour
             enemiesInRange.Remove(collision.GetComponent<EnemyBehaviour>());
         }
     }
-
-    //private void OnTriggerStay2D(Collider2D collision)
-    //{
-    //    if (current < tick)
-    //    {
-    //        current = current + Time.deltaTime;
-    //    }
-    //    else
-    //    {
-
-    //        collision.SendMessage("TakeDamage", new Vector3(red, green, blue));
-
-    //        current = 0;
-    //    }
-    //}
 }
