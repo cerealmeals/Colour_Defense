@@ -5,9 +5,10 @@ using UnityEngine;
 
 public class towerinteraction : MonoBehaviour
 {
-    public float tick = 1;
+    public float tick;
     public float current = 0;
     public Vector3 colours;
+    public Tower towerdata;
 
     public List<EnemyBehaviour> enemiesInRange;
 
@@ -15,8 +16,7 @@ public class towerinteraction : MonoBehaviour
     //public GameObject[] enemies;
     void Start()
     {
-        //if (enemies == null)
-        //    enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        tick = towerdata.attackSpeed;
     }
 
     // Update is called once per frame
@@ -44,20 +44,34 @@ public class towerinteraction : MonoBehaviour
         }
     }
 
+    // old tower stuff
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if (collision.CompareTag("Enemy"))
+    //    {
+    //        enemiesInRange.Add(collision.GetComponent<EnemyBehaviour>());
+    //    }
+    //}
+
+    //private void OnTriggerExit2D(Collider2D collision)
+    //{
+    //    if (collision.CompareTag("Enemy"))
+    //    {
+    //        enemiesInRange.Remove(collision.GetComponent<EnemyBehaviour>());
+    //    }
+    //}
+
+
+    // New towers stuff
+
+    public void addEnemyToList(EnemyBehaviour enemy)
     {
-        if (collision.CompareTag("Enemy"))
-        {
-            enemiesInRange.Add(collision.GetComponent<EnemyBehaviour>());
-        }
+        enemiesInRange.Add(enemy);
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    public void removeEnemyToList(EnemyBehaviour enemy)
     {
-        if (collision.CompareTag("Enemy"))
-        {
-            enemiesInRange.Remove(collision.GetComponent<EnemyBehaviour>());
-        }
+        enemiesInRange.Remove(enemy);
     }
 }

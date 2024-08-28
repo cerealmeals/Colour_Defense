@@ -18,15 +18,7 @@ public class EnemyBehaviour : MonoBehaviour
         green = m_SpriteRenderer.color.g;
         blue = m_SpriteRenderer.color.b;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if(red <= 0 && green <= 0 && blue <= 0)
-        {
-            Destroy(gameObject);
-        }
-    }
+  
 
     public void TakeDamage(Vector3 color)
     {
@@ -35,5 +27,10 @@ public class EnemyBehaviour : MonoBehaviour
         green += color.y;
         blue += color.z;
         m_SpriteRenderer.color = new Color(red, green, blue);
+        
+        if (red <= 0 && green <= 0 && blue <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }

@@ -1,11 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using System.Linq;
 
 public class Path : MonoBehaviour
 {
 
-    Transform[] Points;
+    public List<Transform> sortedPointsTransform;
 
     public float movespeed;
 
@@ -13,13 +16,12 @@ public class Path : MonoBehaviour
 
     private void FindMapWaypoints()
     {
-        GameObject waypointContainer = GameObject.FindGameObjectWithTag("Points");
-        List<Transform> waypointList = new List<Transform>();
-        foreach (Transform child in waypointContainer.transform)
+        GameObject[] WayPointsObjects = GameObject.FindGameObjectsWithTag("Points");
+        foreach (GameObject child in WayPointsObjects)
         {
-            waypointList.Add(child);
+            sortedPointsTransform.Add(child.transform);
         }
-        Points = waypointList.ToArray();
+        sortedPointsTransform = sortedPointsTransform.OrderBy(go => go.name).ToList();
 
     }
 
@@ -28,22 +30,28 @@ public class Path : MonoBehaviour
     {
         movespeed = 2;
         FindMapWaypoints();
-        transform.position = Points[i].transform.position;
+        transform.position = sortedPointsTransform[i].transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, Points[i].transform.position, movespeed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, sortedPointsTransform[i].transform.position, movespeed * Time.deltaTime);
 
-        if(transform.position == Points[i].transform.position)
+        if(transform.position == sortedPointsTransform[i].position)
         {
             i++;
         }
 
-        if(i > Points.Length - 1)
+        if(i > sortedPointsTransform.Count - 1)
         {
             Destroy(gameObject);
         }
     }
+    
+    // for sorting the list of points
+    //private static int SortByName(GameObject o1, GameObject o2)
+    //{
+    //    return o1.name.CompareTo(o2.name);
+    //}
 }
