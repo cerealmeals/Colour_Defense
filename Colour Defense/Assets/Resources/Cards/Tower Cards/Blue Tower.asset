@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 482fccfdbdbe22241ac97802d1f05756, type: 3}
   m_Name: Blue Tower
   m_EditorClassIdentifier: 
-  cardName: Blue
+  cardName: Blue Tower
   cardDescription: A tower that removes the blue
   cardCost: 10
   red: 0
